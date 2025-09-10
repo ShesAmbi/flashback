@@ -15,10 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework.routers import DefaultRouter
 from cards.views import TopicViewSet, topic_cards, toggle_mark
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 
 router = DefaultRouter()
@@ -35,4 +36,6 @@ urlpatterns = [
     path('api/', include('cards.urls')),
     path('api/topics/<int:pk>/cards/', topic_cards, name='topic-cards'),
     path('api/marks/toggle/', toggle_mark, name='toggle-ma'),
+    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
+
