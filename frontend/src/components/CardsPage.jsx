@@ -8,7 +8,7 @@ import "./CardsPage.css";
 */
 
 export default function CardsPage({ topicId = 1, telegramUserId = null }) {
-  const CARDS_API = `http://127.0.0.1:8000/api/topics/${topicId}/cards/`;
+  const CARDS_API = `https://flashback-dh28.onrender.com/api/topics/${topicId}/cards/`;
   const TOGGLE_MARK_API = `http://127.0.0.1:8000/api/marks/toggle/`;
   const GET_MARKS_API = `http://127.0.0.1:8000/api/marks/?user_id=${telegramUserId}`;
 
@@ -201,3 +201,4 @@ export default function CardsPage({ topicId = 1, telegramUserId = null }) {
     </div>
   );
 }
+
