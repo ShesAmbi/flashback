@@ -33,10 +33,11 @@ def home(request):
 urlpatterns = [
     path('', home),  # root path
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
+    path('api/', include('cards.urls')),
     path('api/topics/<int:pk>/cards/', topic_cards, name='topic-cards'),
     path('api/marks/toggle/', toggle_mark, name='toggle-ma'),
     re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
+
 
 
