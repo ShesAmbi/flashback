@@ -54,18 +54,18 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'flashback.urls'
 
+# Template folder for index.html
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "frontend" / "build"],  # <-- React build folder
+        "APP_DIRS": True,
+        "OPTIONS": {"context_processors": [
+            "django.template.context_processors.debug",
+            "django.template.context_processors.request",
+            "django.contrib.auth.context_processors.auth",
+            "django.contrib.messages.context_processors.messages",
+        ]},
     },
 ]
 
@@ -117,8 +117,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "frontend/build/static"]
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
 # Use compressed manifest storage to help cache busting
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -137,4 +135,5 @@ CORS_ALLOWED_ORIGINS = [
 
 # or for quick dev you can set (less secure):
 # CORS_ALLOW_ALL_ORIGINS = True
+
 
