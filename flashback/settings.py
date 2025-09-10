@@ -126,14 +126,11 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # during development allow React dev server to call API
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",   # Vite/React default dev port
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # or for quick dev you can set (less secure):
 # CORS_ALLOW_ALL_ORIGINS = True
+
 
 
