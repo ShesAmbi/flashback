@@ -114,6 +114,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [BASE_DIR / "frontend/build/static"]
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Use compressed manifest storage to help cache busting
@@ -134,3 +137,4 @@ CORS_ALLOWED_ORIGINS = [
 
 # or for quick dev you can set (less secure):
 # CORS_ALLOW_ALL_ORIGINS = True
+
