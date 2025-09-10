@@ -8,9 +8,9 @@ import "./CardsPage.css";
 */
 
 export default function CardsPage({ topicId = 1, telegramUserId = null }) {
-  const CARDS_API = `https://flashback-dh28.onrender.com/api/topics/${topicId}/cards/`;
-  const TOGGLE_MARK_API = `http://127.0.0.1:8000/api/marks/toggle/`;
-  const GET_MARKS_API = `http://127.0.0.1:8000/api/marks/?user_id=${telegramUserId}`;
+  const CARDS_API = `https://flashback-1-k6ae.onrender.comapi/topics/${topicId}/cards/`;
+  const TOGGLE_MARK_API = `https://flashback-1-k6ae.onrender.com/api/marks/toggle/`;
+  const GET_MARKS_API = `https://flashback-1-k6ae.onrender.com/api/marks/?user_id=${telegramUserId}`;
 
   const [cards, setCards] = useState([]);
   const [index, setIndex] = useState(0);
@@ -201,4 +201,5 @@ export default function CardsPage({ topicId = 1, telegramUserId = null }) {
     </div>
   );
 }
+
 
